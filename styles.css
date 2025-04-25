@@ -1,45 +1,95 @@
+/* General Body Styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for mode change */
   }
   
+  /* Light Mode Styles */
+  body.light-mode {
+    background-color: greenyellow;
+    color: #000000;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+  
+  /* Container Styling */
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
     text-align: center;
-    margin-top: 20%;
   }
   
-  h1, h2 {
-    margin: 10px;
+  /* Header Styles */
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
   }
   
+  h2#clock {
+    font-size: 4em;
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace; /* Monospace for the clock */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Button Styles */
   button {
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  /* Light mode default */
-  body.light {
-    background-color: #f5f5f5;
-    color: #222;
-  }
-  
-  body.dark {
-    background-color: #222;
-    color: #f5f5f5;
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: white;
+    transition: background-color 0.3s ease;
   }
   
   button:hover {
     background-color: #0056b3;
+  }
+  
+  /* Light Mode Button */
+  body.light-mode button {
+    background-color: red; /* Blue color for light mode */
+  }
+  
+  /* Dark Mode Button */
+  body.dark-mode button {
+    background-color: #444; /* Dark color for dark mode */
+  }
+  
+  /* Button Active State (pressed) */
+  button:active {
+    background-color: #003366;
+    transform: translateY(2px);
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2#clock {
+      font-size: 3em;
+    }
+  
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
   }
   
